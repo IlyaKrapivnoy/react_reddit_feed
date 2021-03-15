@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Article = () => {
+const Article = (props) => {
     return (
         <div>
             <article>
-                <a href="#">
-                    <h3>Title</h3>
+                <a href={ 'https://reddit.com' + props.article.permalink } target="_blank" >
+                    <h3>{ props.article.title }</h3>
                 </a>
             </article>
         </div>

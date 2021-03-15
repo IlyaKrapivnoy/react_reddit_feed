@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <input type="text" className="input" value="webdev" />
+        <input type="text" className="subreddit_input" value="webdev" />
       </header>
       <div className="articles">
         {(articles != null) ? articles.map((article, index) => <Article key={index} article={article.data} />) : ''}  
