@@ -6,20 +6,19 @@ function App() {
   const [subreddit, setSubreddit] = useState('webdev');
 
   useEffect(() => {
-    fetch("https://www.reddit.com/r/webdev.json")
-      .then(res => {
-        if(res.status != 200) {
-          console.log("ERORO#@$@%^");
+    fetch("https://www.reddit.com/r/" + subreddit +".json").then(
+      res => {
+        if (res.status !== 200) {
+          console.warn("Warning: Something is wrong with the api.");
           return;
         }
-
         res.json().then(data => {
-          if(data != null) {
-            setArticles(data.data.children)
-          }
-        })
-      })
-  }, [subreddit])
+          if (data != null)
+            setArticles(data.data.children);
+        });
+      }
+    )
+  }, [subreddit]);
 
 
   return (
